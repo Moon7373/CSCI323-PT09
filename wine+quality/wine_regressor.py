@@ -31,3 +31,21 @@ print("📊 Evaluation Metrics:")
 print(f"MAE  = {mae:.3f}")
 print(f"RMSE = {rmse:.3f}")
 print(f"R²   = {r2:.3f}")
+
+new_sample = pd.DataFrame([{
+    'fixed acidity': 7.0,
+    'volatile acidity': 0.27,
+    'citric acid': 0.36,
+    'residual sugar': 20.7,
+    'chlorides': 0.045,
+    'free sulfur dioxide': 45.0,
+    'total sulfur dioxide': 170.0,
+    'density': 1.001,
+    'ph': 3.00,
+    'sulphates': 0.45,
+    'alcohol': 8.8
+}])
+
+# Predict wine quality
+predicted_quality = model.predict(new_sample)[0]
+print(f"\n🍷 Predicted wine quality: {predicted_quality:.2f}")
